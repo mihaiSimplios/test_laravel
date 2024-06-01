@@ -20,3 +20,7 @@ php artisan db:seed
 
 Start the development server:
 php artisan serve
+
+You can now access the server at http://localhost:8000.
+
+Am facut un controller pt teste, pt cerita 1 http://localhost:8000/test-contacte.

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             BancaSeeder::class,
             SocietateLeasingSeeder::class,
             ContactSeeder::class,
+            CarSeeder::class,
         ]);
     }
 }

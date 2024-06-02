@@ -12,6 +12,8 @@ class Client extends Model
 
     protected $table = 'clienti';
 
+    protected $fillable = ['name'];
+
     public function contacts(): MorphToMany
     {
         return $this->morphToMany(Contact::class, 'contactable');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banca;
+use App\Models\Car;
+use App\Models\Client;
 use App\Models\SocietateLeasing;
 use Illuminate\Http\Request;
 
@@ -30,5 +32,26 @@ class TestController extends Controller
         foreach ($contacts as $contact) {
             echo $contact->name . "</br>";
         }
+    }
+
+    public function testCar()
+    {
+        // Eager loading
+        $cars = Car::with(['engine', 'drivers'])->get();
+
+        return view('cars.index', compact('cars'));
+    }
+
+    public function testClientObserver()
+    {
+        // Testam inserarea unui client
+        Client::create([
+            'name' => 'Clientul inserat'
+        ]);
+
+        // Testam actualizarea unui client
+        $client = Client::first();
+        $client->name = 'Client updatad';
+        $client->save();
     }
 }

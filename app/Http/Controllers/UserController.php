@@ -68,4 +68,16 @@ class UserController extends Controller
 
         return response()->json(null, 204);
     }
+
+    public function restoreUser($id)
+    {
+        $client = User::withTrashed()->find($id);
+        $client->restore();
+    }
+
+    public function forceDeleteUser($id)
+    {
+        $client = User::withTrashed()->find($id);
+        $client->forceDelete();
+    }
 }

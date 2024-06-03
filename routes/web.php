@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Car;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +23,20 @@ Route::get('/load-drivers', 'App\Http\Controllers\DriverController@index');
 Route::get('/load-cars', function (Car $car) {
     return $car->all();
 });
+
+Route::prefix('users')->group(function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('/{id}', [UserController::class, 'show']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::put('/{id}', [UserController::class, 'update']);
+
+    // Soft delete
+    Route::delete('/{id}', [UserController::class, 'destroy']);
+
+    // Restore
+    Route::get('/restore-user/{id}', [UserController::class, 'restoreUser']);
+
+    // Force delete
+    Route::delete('/force-delete-user/{id}', [UserController::class, 'forceDeleteUser']);
+});
+

@@ -6,6 +6,7 @@ use App\Models\Banca;
 use App\Models\Car;
 use App\Models\Client;
 use App\Models\SocietateLeasing;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TestController extends Controller

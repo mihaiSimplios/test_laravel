@@ -40,3 +40,12 @@ Route::prefix('users')->group(function () {
     Route::delete('/force-delete-user/{id}', [UserController::class, 'forceDeleteUser']);
 });
 
+Route::prefix('products')->group(function () {
+    Route::get('/highRatingReviews', 'App\Http\Controllers\ProductController@highRatingReviews');
+    Route::get('/', 'App\Http\Controllers\ProductController@index');
+    Route::get('/{id}', 'App\Http\Controllers\ProductController@show');
+    Route::post('/', 'App\Http\Controllers\ProductController@store');
+    Route::put('/{id}', 'App\Http\Controllers\ProductController@update');
+    Route::delete('/{id}', 'App\Http\Controllers\ProductController@destroy');
+
+});

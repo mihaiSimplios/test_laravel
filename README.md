@@ -24,14 +24,3 @@ php artisan serve
 You can now access the server at http://localhost:8000.
 
 Am facut un controller pt teste, pt cerita 1 http://localhost:8000/test-contacte.
-
-INFO  Personal access client created successfully.
-
-Client ID ...................................................................................................................................... 1
-Client secret ........................................................................................... BD69D09ei93QIlNF5ltaziXcJxtxEMgSCUpgy2Ia
-
-INFO  Password grant client created successfully.
-
-Client ID ...................................................................................................................................... 2
-Client secret ........................................................................................... QNGzzCNXPIvaf6xMKDLA8OcEOGboqFH5Fl5MU1xW
-
